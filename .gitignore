@@ -1,0 +1,20 @@
+# subdirectories to ignore #
+misc/
+_site/
+
+# filetypes to ignore #
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.Rhistory
+*.vrb
+*.dvi
+
+# files to ignore #
+Overview.docx
