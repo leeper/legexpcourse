@@ -50,6 +50,7 @@ Experiments *not* orchestrated by researchers:
  - Cirone, van Coppenolle (2017) - "Cabinets, Committees and Careers: A Natural Experiment in 19th Century France"
  - Broockman, Butler (2015) - "Do Better Committee Assignments Meaningfully Benefit Legislators? Evidence from a Randomized Experiment in the Arkansas State Legislature"
  - Loewen, Koop, Settle, Fowler (2014) - "A Natural Experiment in Proposal Powerand Electoral Success"
+ - Chattopadhyay, Duflo (2004) - "Women as Policy Makers: Evidence from a Randomized Policy Experiment in India"
  
 ## Third Session (Afternoon)
 
