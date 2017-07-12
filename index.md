@@ -32,7 +32,7 @@ The first session will provide an overview of the course, discuss the history of
 
  - Slides (for entire day)
  
- - **Required**: Gerber and Green (2008) - "Field Experiments and Natural Experiments" (Ch. 15 from *Oxford Handbook of Political Methodology*)
+ - **Suggested**: Gerber and Green (2008) - "Field Experiments and Natural Experiments" (Ch. 15 from *Oxford Handbook of Political Methodology*)
  - **Suggested**: Holland, P. W. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81: 945-960.
 
  - Materials from Anchoring Experiment Activity
@@ -47,14 +47,14 @@ The second session will discuss field experiments and quasi-experiments on parli
 Experiments orchestrated by researchers:
 
  - **Required**: Broockman (2013) - "Black Politicians Are More Intrinsically Motivated to Advance Blacks' Interests: A Field Experiment Manipulating Political Incentives"
- - **Suggested**: Broockman, Butler (2011) - "Do Politicians Racially Discriminate Against Constituents? A Field Experiment on State Legislators"
+ - **Suggested**: Butler, Broockman (2011) - "Do Politicians Racially Discriminate Against Constituents? A Field Experiment on State Legislators"
  - **Suggested**: Neblo, Esterling, Kennedy, Lazer, Sokhey (2010) - "Who Wants To Deliberate—And Why?"
  - **Suggested**: Esterling, Neblo, Lazer (2011) - "Means, Motive, And Opportunity In Becoming Informed About Politics"
  - **Suggested**: Butler, Nickerson (2011) - "Can Learning Constituency Opinion Affect How Legislators Vote? Results from a Field Experiment"
  
 Experiments *not* orchestrated by researchers:
 
- - **Required**: Cirone, van Coppenolle (2017) - "Cabinets, Committees and Careers: A Natural Experiment in 19th Century France"
+ - **Suggested**: Cirone, van Coppenolle (2017) - "Cabinets, Committees and Careers: A Natural Experiment in 19th Century France"
  - **Suggested**: Broockman, Butler (2015) - "Do Better Committee Assignments Meaningfully Benefit Legislators? Evidence from a Randomized Experiment in the Arkansas State Legislature"
  - **Suggested**: Kellermann, Shepsle (2009) - "Congressional Careers, Committee Assignments, and Seniority Randomization in the US House of Representatives"
  - **Suggested**: Loewen, Koop, Settle, Fowler (2014) - "A Natural Experiment in Proposal Power and Electoral Success"
