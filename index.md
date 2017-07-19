@@ -21,10 +21,10 @@ The course will provide a general introduction to causal inference in experiment
 
 For background reading, students may be interested in the following review articles:
 
- - Druckman, Leeper, Mullinix (2011) - "The Experimental Study of	Legislative Behaviour"
+ - Druckman, Leeper, Mullinix (2011) - "The Experimental Study of Legislative Behaviour"
  - Grose (2014) - "Field Experimental Work on Political Institutions"
 
-An outline of the course is given below, along with required and suggested reading for each session.
+An outline of the course is given below, along with required and suggested reading for each session. [All readings are available here](https://drive.google.com/drive/folders/0Bwxjj0JIn0KoZnhZSlZhSG5ranc?usp=sharing).
 
 ## First Session (Morning)
 
@@ -59,6 +59,7 @@ Experiments *not* orchestrated by researchers:
  - **Suggested**: Kellermann, Shepsle (2009) - "Congressional Careers, Committee Assignments, and Seniority Randomization in the US House of Representatives"
  - **Suggested**: Loewen, Koop, Settle, Fowler (2014) - "A Natural Experiment in Proposal Power and Electoral Success"
  - **Suggested**: Chattopadhyay, Duflo (2004) - "Women as Policy Makers: Evidence from a Randomized Policy Experiment in India"
+ - **Suggested**: Bhavnani (2009) - "Do Electoral Quotas Work after They Are Withdrawn? Evidence from a Natural Experiment in India"
  - **Suggested**: Rogowski, Sinclair (2012) - "Estimating the Causal Effects of Social Interaction with Endogenous Networks"
  
 ## Third Session (Afternoon)
