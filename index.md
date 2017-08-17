@@ -30,7 +30,7 @@ An outline of the course is given below, along with required and suggested readi
 
 The first session will provide an overview of the course, discuss the history of experiments, and provide a conceptual and notational framework for designing, analyzing, and discussing experiments.
 
- - Slides (for entire day)
+ - [Slides](slides/lecture2017-handout.pdf) (for entire day)
  
  - **Suggested**: Gerber and Green (2008) - "Field Experiments and Natural Experiments" (Ch. 15 from *Oxford Handbook of Political Methodology*)
  - **Suggested**: Holland, P. W. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81: 945-960.

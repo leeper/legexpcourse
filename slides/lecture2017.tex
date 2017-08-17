@@ -1,5 +1,5 @@
 \documentclass[14pt]{beamer}
-%\documentclass[handout]{beamer} %Makes Handouts
+%\documentclass[14pt, handout]{beamer} %Makes Handouts
 \usetheme{Singapore} %Gray with fade at top
 \useoutertheme[subsection=false]{miniframes} %Supppress subsection in header
 \useinnertheme{rectangles} %Itemize/Enumerate boxes
@@ -608,15 +608,10 @@ Unit & $Y_0$ & $Y_1$ \\ \hline
 
 
 
-\section{Experimental Analysis}
-\frame{\tableofcontents[currentsection]}
-
-
-
 \frame{
 \frametitle{Experimental Analysis I}
 \small
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
 \item This boils down to being a mean-difference between two groups:
 	\begin{equation}
@@ -627,6 +622,7 @@ Unit & $Y_0$ & $Y_1$ \\ \hline
 	\item t-tests
 	\item OLS regression
 	\end{itemize}
+\item<2-> Experiments do not require ``controlling for'' anything, if randomization occurred successfully
 \end{itemize}
 }
 
@@ -781,9 +777,11 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 
 \frametitle{Intuition about Variance}
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item Bigger sample $\rightarrow$ smaller SEs
+
 \item Smaller variance $\rightarrow$ smaller SEs
+
 \item Efficient use of sample size:
 	\begin{itemize}
 	\item When treatment group variances equal, equal sample sizes are most efficient
@@ -800,8 +798,9 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 
 \frametitle{Statistical Power}
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item Power analysis to determine sample size
+
 \item Type I and Type II Errors
 	\begin{itemize}
 	\item True positive rate is power
@@ -809,12 +808,14 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 	\end{itemize}
 \end{itemize}
 
+\begin{center}
 \begin{tabular}{lrr}
 \toprule
 & $H_0$ True & $H_0$ False \\ \midrule
 Reject $H_0$ & Type 1 Error & \textbf{True positive} \\
 Accept $H_0$ & False negative & Type II error \\ \bottomrule
 \end{tabular}
+\end{center}
 
 }
 
@@ -912,7 +913,8 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 \frametitle{Experimental Hypothesis Testing}
 
 \begin{itemize}\itemsep1em
-\item From theory, we derive testable hypotheses
+\item From theory, we derive testable hypotheses\\
+
 	\begin{itemize}
 	\item Hypotheses are expectations about differences in outcomes across levels of a putatively causal variable
 	\item In an experiment, an hypothesis must be testable by an SATE
@@ -926,62 +928,100 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 \frame{
 
-\frametitle{{\normalsize Example: News Framing}}
+\frametitle{{\normalsize Example: Framing and Attention\footnote{Walgrave, Sevenans, Van Camp, Loewen (2017) -- ``What Draws Politicians' Attention? An Experimental Study of Issue Framing and its Effect on Individual Political Elites''}}}
 
 \small
 
 \begin{itemize}
-\item Theory: Presentation of news affects opinion
-\item Hypotheses:
+\item Theory: Presentation of information affects politicians' attention
+\item Hypothesis:
 	\begin{itemize}\footnotesize
-	\item News emphasizing free speech increases support for a hate group rally
-	\item News emphasizing public safety decreases support for a hate group rally
+	\item Information framed as a conflict draws more attention from political elites than information not framed as a conflict.
 	\end{itemize}
 \item Manipulation:
 	\begin{itemize}\footnotesize
-	\item Control group: no information
-	\item Free speech group: article emphasizing rights
-	\item Public safety group: article emphasizing safety
+	\item Control group: Presentation of headline information
+	\item Treatment group: Same information presented as conflict
+	\end{itemize}
+\item Outcome:
+	\begin{itemize}
+	\item How likely are legislators to read full article
 	\end{itemize}
 \end{itemize}
 
 }
-
-
 
 
 \frame{
 
-\frametitle{{\normalsize Example: Partisan Identity}}
+\frametitle{{\normalsize Ex.: Presence/Absence}}
 
 \small
 
-\begin{itemize}
-\item Theory: Strength of partisan identity affects tendency to accept party position
-\item Hypotheses:
-	\begin{itemize}\small
-	\item Strong partisans are more likely to accept their party's position on an issue
-	\end{itemize}
+\begin{itemize}\itemsep0.5em
+\item Theory: Legislators vote in line with constituents' preferences
+\item Hypothesis: Exposure to a poll of constituent views shifts legislative votes.
 \item Manipulation:
-	\begin{itemize}\small
-	\item Control group: no manipulation
-	\item ``Univalent'' condition
-	\item ``Ambivalent'' condition
+	\begin{itemize}\small 
+	\item Control group receives no polling information. 
+	\item Treatment group receives a letter containing polling information.
+	\end{itemize}
+\item Outcome:
+	\begin{itemize}
+	\item How legislators vote on relevant piece of legislation
 	\end{itemize}
 \end{itemize}
 
 }
 
 
-\frame[label=ambivalentpartisan]{
+\frame{
 
-\frametitle{\textbf{\only<1>{Univalent}\only<2>{Ambivalent}}}
+\frametitle{{\normalsize Ex.: Levels/doses}}
 
-These days, Democrats and Republicans differ from one another considerably. The two groups seem to be growing further and further apart, not only in terms of their opinions but also their lifestyles. Earlier in the survey, you said you tend to identify as a \textit{Democrat/ Republican}. Please take a few minutes to think about what you like about \textit{Democrats/ Republicans} compared to the \textit{Republicans/ Democrats}. Think of 2 to 3 things you especially like best about \textbf{\only<1>{your party}\only<2>{the other party}}. Then think of 2 to 3 things you especially dislike about \textbf{\only<2>{your party}\only<1>{the other party}}. Now please write those thoughts in the space below.
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Theory: Legislators vote in line with constituents' preferences
+\item Hypothesis: Exposure to a poll of constituent views shifts legislative votes.
+\item Manipulation:
+	\begin{itemize}\small 
+	\item Control group receives no polling information. 
+	\item Treatment group 1 receives a letter containing polling information.
+	\item Treatment group 2 receives two letters containing polling information.
+	\item etc.
+	\end{itemize}
+\item Outcome:
+	\begin{itemize}
+	\item How legislators vote on relevant piece of legislation
+	\end{itemize}
+\end{itemize}
 
 }
 
 
+\frame{
+
+\frametitle{{\normalsize Ex.: Qualitative variation}}
+
+\small
+
+\begin{itemize}
+\item Theory: Legislators vote in line with constituents' preferences
+\item Hypothesis: Exposure to a poll of constituent views shifts legislative votes.
+\item Manipulation:
+	\begin{itemize}\small 
+	\item Control group receives no polling information. 
+	\item Treatment group 1 receives a letter containing polling information suggesting public support.
+	\item Treatment group 2 receives a letter containing polling information suggesting public opposition.
+	\end{itemize}
+\item Outcome:
+	\begin{itemize}
+	\item How legislators vote on relevant piece of legislation
+	\end{itemize}
+\end{itemize}
+
+}
 
 \frame{
 
@@ -1000,65 +1040,56 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 }
 
-
 \frame{
 
-\frametitle{{\normalsize Ex.: Presence/Absence}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Theory: Negative campaigning reduces support for the party described negatively.
-\item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party.
-\item Manipulation:
-	\begin{itemize}\small 
-	\item Control group receives no advertisement. 
-	\item Treatment group watches a video containing a negative ad describing a party.
-	\end{itemize}
-\end{itemize}
+\begin{center}
+\large But how do we know that the experiment worked?
+\end{center}
 
 }
 
 
 \frame{
 
-\frametitle{{\normalsize Ex.: Levels/doses}}
-
-\small
-
-\begin{itemize}\itemsep-0.2em
-\item Theory: Negative campaigning reduces support for the party described negatively.
-\item Hypothesis: Exposure to higher levels of negative advertising criticizing a party reduces support for that party.
-\item Manipulation:
-	\begin{itemize}\footnotesize
-	\item Control group receives no advertisement. 
-	\item Treatment group 1 watches a video containing 1 negative ad describing a party.
-	\item Treatment group 2 watches a video containing 2 negative ads describing a party.
-	\item Treatment group 3 watches a video containing 3 negative ads describing a party.
-	\item etc.
-	\end{itemize}
-\end{itemize}
+\begin{quote}\large
+The best criterion for evaluating the quality of an experiment is whether it manipulated the intended independent variable and controlled everything else by design.
+\end{quote}
+\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (18 August 2017)}
 
 }
 
-
 \frame{
 
-\frametitle{{\normalsize Ex.: Qualitative variation}}
+\frametitle{How do we know we manipulated what we think we manipulated?}
 
 \small
 
 \begin{itemize}
-\item Theory: Negative campaigning reduces support for the party described negatively.
-\item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party, while a positive advertisement has no effect.
-\item Manipulation:
-	\begin{itemize}\footnotesize
-	\item Control group receives no advertisement. 
-	\item Negative treatment group watches a video containing a negative ad describing a party.
-	\item Positive treatment group watches a video containing a positive ad describing a party.
-	\end{itemize}
+\item<2-> Outcomes are affected consistent with theory
+\item<3-> Before the study using \textit{pilot testing} (or \textit{pretesting})
+\item<4-> During the study, using \textit{manipulation checks}
+\item<5-> During the study, using \textit{placebos}
+\item<6-> During the study, using \textit{non-equivalent outcomes}
 \end{itemize}
 
+\only<6->{These may not all be possible and all are incompletely informative.}
+}
+
+\frame{
+
+\frametitle{How do we know we controlled what we think we controlled?}
+
+\small
+
+\begin{itemize}
+\item<2-> Measure characteristics across groups to test for \textit{covariate balance}, but imbalance does not necessarily imply experimental failure
+
+\item<3-> In field experiments, measure whether legislators were actually treated (i.e., actually received and \textit{complied} with their assigned treatment)
+
+\item<4-> Measure whether there were spillovers between experimental conditions if possible
+\end{itemize}
+
+\only<5->{These may not all be possible and all are incompletely informative.}
 }
 
 \questions
@@ -1069,7 +1100,7 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 
 
-\section{Paradigms and Examples}
+\section[Paradigms]{Paradigms and Examples}
 \frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 \frame{
@@ -1104,7 +1135,9 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 \frametitle{Paradigm 1: Field Experiments}
 
-\begin{itemize}\itemsep1em
+\small
+
+\begin{itemize}\itemsep0.5em
 \item Basic idea: randomly expose legislators \textit{in situ} to some experience and measure an outcome that might be affected by it
 
 \item Two ``flavours''
@@ -1116,7 +1149,7 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 \item Tend to be simple in terms of design due to practical difficulty of exposing legislators' to treatment and measuring outcomes
 
-\item ``Natural'' experiments are limited to the fact that relatively few features of legislatures are randomized (e.g., committee assignments, office locations, proposal rights/order, etc.)
+\item ``Natural'' experiments are limited by randomized institutions being rare (e.g., committee assignments, office locations, proposal rights/order, etc.)
 \end{itemize}
 
 }
@@ -1126,7 +1159,7 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 \frametitle{Paradigm 1: Field Experiments}
 
-\begin{itemize}\itemsep1em
+\begin{itemize}\itemsep0.5em
 
 \item Example of Flavour A
 
@@ -1174,11 +1207,13 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 \frame{
 
-\frametitle{Paradigm 2: Survey Experiments}
+\frametitle{{\normalsize Paradigm 2: Survey Experiments}}
+
+\small
 
 Example:
 
-\begin{itemize}\itemsep1em
+\begin{itemize}\itemsep0.5em
 
 \item Butler and Dynes (2016)
 
@@ -1195,6 +1230,8 @@ Example:
 \frame{
 
 \frametitle{Paradigm 3: Simulations}
+
+\small
 
 \begin{itemize}\itemsep1em
 \item Basic idea: Derive theoretical expectations about legislative behavior and test those predictions in a \textit{stylized} legislative context using non-legislators as participants
@@ -1234,8 +1271,6 @@ Example:
 }
 
 
-\frame{}
-
 \questions
 
 \frame{
@@ -1268,13 +1303,25 @@ Example:
 \frame{}
 
 
+\frame{
+
+\frametitle{Activity!}
+
+\begin{itemize}\itemsep0.5em
+\item How do we know if an experiment is any good?
+\item Write for 3 minutes to yourself
+\item<2-> Talk with a partner for about 3 minutes
+\item<2-> Try to develop some criteria that allow you to evaluate ``what makes for a good experiment?'' 
+\end{itemize}
+
+}
 
 \section[Challenges]{Challenges of Legislative Experiments}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
 
-\frametitle{Many Challenges, Too Little Time}
+\frametitle{Many Challenges,\\Too Little Time}
 
 \begin{enumerate}\itemsep1em
 \item Nonresponse and Noncompliance
@@ -1291,303 +1338,143 @@ Example:
 
 % Nonresponse and Noncompliance
 \frame{
+\frametitle{Nonresponse}
 
-\frametitle{{\normalsize Treatment Noncompliance}}
+\begin{itemize}\itemsep1em
+
+\item In survey experiments, nonresponse may introduce challenges:
+
+	\begin{itemize}
+	\item Underpowered designs
+	\item Response biases that affect generalizability
+	\item Nonresponse may be due to treatment
+	\item Nonresponse may be due to attrition
+	\end{itemize}
+
+\item The only way to avoid nonresponse is to try to incentivize response or minimize effort involved in a study
+
+\item Real risk: more surveys might create common pool resource problems!
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Compliance}
+
+\small
 
 \begin{itemize}\itemsep0.5em
-\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
-\item<2-> Several strategies
+\item Compliance is when individuals receive and accept the treatment to which they are assigned, as opposed to:
+	\begin{itemize}
+	\item Receiving the wrong treatment (cross-over)
+	\item Failing to receive any treatment 
+	\end{itemize}
+\item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
+
+\item Possible responses to noncompliance:
 	\begin{itemize}
 	\item ``As treated'' analysis
 	\item ``Intention to treat'' analysis
 	\item Estimate a LATE
 	\end{itemize}
 \end{itemize}
-
 }
 
 \frame{
-\frametitle{{\normalsize Analyzing Noncompliance}}
+\frametitle{Analyzing Noncompliance}
 
 \small
 
 \begin{itemize}\itemsep0.5em
 \item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
-\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
-\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
-\end{itemize}
-}
 
-\frame{
-	\frametitle{{\large Local Average Treatment Effect}}
-	\small
-	\begin{itemize}\itemsep0.2em
-	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
-	\item This matters if effects are \textit{heterogeneous}
-	\item LATE is effect for those who \textit{comply}
-	\item Four subpopulations:
-		\begin{itemize}\footnotesize
-		\item Compliers: $X = 1$ only if $D = 1$
-		\item Always-takers: $X = 1$ regardless of $D$
-		\item Never-takers: $X = 0$ regardless of $D$
-		\item Defiers: $X = 1$ only if $D = 0$
-		\end{itemize}
-	\item Exclusion restriction! Monotonicity!
-	\end{itemize}
+\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
+
+\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
+
+\item<3-> If noncompliance is symmetric, analysis much more complicated.
+\end{itemize}
 }
 
 \questions
 
 
-
-
-\frame{
-\frametitle{Compliance}
-\begin{itemize}
-\item Compliance is when individuals receive and accept the treatment to which they are assigned:
-	\begin{itemize}
-	\item Receive the wrong treatment (cross-over)
-	\item Fail to receive any treatment 
-	\end{itemize}
-\item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
-\end{itemize}
-}
-
-\begin{frame}
-\small 
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw<1>[->] (0,0) node[left] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
-    \draw<2->[->] (0,0) node[left, color=red] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (3.5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Coin Toss} -- (X);
-    \draw[->, very thick, color=red] (X) -- (Y);
-    \draw<2->[->, very thick, color=blue] (-3,-1) node[left, color=blue] (X2) {$\text{Smoking}_{t-1}$} -- (Y);
-    \draw<2->[->, very thick, color=blue] (X2) -- (X);
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
 % Spillover
+\frame{
 
+\frametitle{Spillover}
+
+\begin{itemize}\itemsep1em
+\item A key assumption of experimental analysis is that units are \textit{independent}
+
+\item This assumption may be implausible in legislatures because units are in regular communication and may ``share'' some of their treatment with others in the group
+
+\item What can be done?
+
+	\begin{itemize}
+	\item Try to avoid it by design!
+	\item Exclude individuals affected by spillovers, if observable
+	\item More complicated procedures
+	\end{itemize}
+
+\end{itemize}
+
+}
 
 % What can be randomized?
 \frame{
 
 \frametitle{What can be randomized?}
 
+\small
+
+\begin{itemize}\itemsep0.5em
+\item In theory almost anything can be randomized, but not everything
+
+	\begin{itemize}
+	\item Intrinsic characteristics
+	\item Institutional features (outside of simulations)
+	\item Contextual factors
+	\end{itemize}
+
+\item Anything that is ``information-like'' can easily and obviously be randomized\footnote{Messages, contact, personal interactions, etc.}
+
+\item If you want to study factors that are not information-like:
+
+	\begin{itemize}
+	\item Look for ``natural'' experiments
+	\item Run simulations
+	\item Run field or survey experiments that attempt to modify the \textit{salience} of those factors
+	\end{itemize}
+\end{itemize}
 
 }
 
 
 % Ethics
-
-
-
-
-
-
-
-
-
-
-
 \frame{
 
-\frametitle{Activity!}
+\frametitle{Research Ethics}
 
-\begin{itemize}\itemsep0.5em
-\item How do we know if an experiment is any good?
-\item Talk with a partner for about 3 minutes
-\item Try to develop some criteria that allow you to evaluate ``what makes for a good experiment?'' 
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Some possible criteria}
-
-\small
-
-\begin{itemize}\itemsep-0.2em
-\item Significant results
-\item Face validity
-\item Coherent for respondents
-\item Non-obvious to respondents
-\item Simple
-\item Indirect/unobtrusive
-\item Validated by prior work
-\item Innovative/creative
-\item \dots
-\end{itemize}
-
-}
-
-
-\frame{
-
-\begin{quote}\large
-The best criterion for evaluating the quality of an experiment is whether it manipulated the intended independent variable and controlled everything else by design.
-\end{quote}
-\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (18 January 2017)}
-
-}
-
-\frame{
-
-\frametitle{How do we know we manipulated what we think we manipulated?}
-
-\small
-
-\begin{itemize}
-\item<2-> Outcomes are affected consistent with theory
-\item<3-> Before the study using \textit{pilot testing} (or \emph{pretesting})
-\item<4-> During the study, using \emph{manipulation checks}
-\item<5-> During the study, using \emph{placebos}
-\item<6-> During the study, using \textit{non-equivalent outcomes}
-\end{itemize}
-}
-
-\frame{
-
-\frametitle{I. Outcomes Affected}
-
-\begin{itemize}\itemsep0.5em
-\item Follows a circular logic!
-\item Doesn't tell us anything if we hypothesize null effects
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{II. Pilot Testing}
-
-\small
-
-\begin{itemize}\itemsep0.2em
-\item Goal: establish construct validity of manipulation
-\item Assess whether a set of possible manipulations affect a measure of the \textit{independent} variable
-\item<2-> Example:
+\begin{itemize}\itemsep1em
+\item Researchers have obligations to attempt to:
 	\begin{itemize}
-	\item Goal: Manipulate the ``strength'' of an argument
-	\item Write several arguments
-	\item Ask pilot test respondents to report how strong each one was
+	\item minimize risk to participants
+	\item to maximize benefits to human knowledge
+	\item to protect the privacy of personal data
+	\item to fairly and objectively report their research
 	\end{itemize}
+\item<2-> These rules vary to some extent across contexts
+\item<3-> But a major question is whether these ``standard'' ethical rules also apply to politicians. What do you think?
 \end{itemize}
 
 }
 
-\frame{
-
-\frametitle{III. Manipulation Checks}
-
-\small
-
-\begin{itemize}\itemsep0.2em
-\item Manipulation checks are items added post-treatment, post-outcome that assess whether the \textit{independent} variable was affected by treatment
-\item We typically talk about manipulations as directly setting the value of $X$, but in practice we are typically manipulating something \textit{that we think} strongly modifies $X$
-\item<2-> Example: information manipulations aim to modify knowledge or beliefs, but are necessarily imperfect at doing so
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{\normalsize Manipulation check example\footnote{Leeper \& Slothuus. n.d. ``Can Citizens Be Framed?'' Available from: \url{http://thomasleeper.com/research.html}.}}
-
-\begin{enumerate}
-\item Treatment 1: Supply Information
-\item Manipulation check 1: measure beliefs
-\item Treatment 2: Prime a set of considerations
-\item Outcome: Measure opinion
-\item Manipulation check 2: measure dimension salience
-\end{enumerate}
-
-}
+\questions
 
 
-\frame{
-
-\frametitle{{\normalsize Some Best Practices}}
-
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Manipulation checks should be innocuous
-	\begin{itemize}
-	\item Shouldn't modify independent variable
-	\item Shouldn't modify outcome variable
-	\end{itemize}
-\item<3-> Generally, measure post-outcome
-\item<4-> Measure both what you wanted to manipulate \textit{and} what you didn't want to manipulate
-	\begin{itemize}
-	\item Most treatments are \textit{compound}!
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{IV. Placebos}
-
-\begin{itemize}\itemsep0.5em
-\item Include an experimental condition that \textit{does not} manipulate the variable of interest (but might affect the outcome)
-\item<2-> Example:
-	\begin{itemize}
-	\item Study whether risk-related arguments about climate change increase support for a climate change policy
-	\item Placebo condition: control article with risk-related arguments about non-environmental issue (e.g., terrorism)
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{V. Non-equivalent outcomes}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Measures an outcome that \textit{should not} be affected by independent variable
-\item<2-> Example:
-	\begin{itemize}
-	\item Assess effect of some treatment on attitudes toward group A
-	\item Focal outcome: attitudes toward group A
-	\item Non-equivalent outcome: attitudes toward group B
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Aside: Demand Characteristics}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item ``Demand characteristics'' are features of experiments that (unintentionally) imply the purpose of the study and thereby change respondents' behavior (to be consistent with theory)
-\item<2-> Implications:
-	\begin{itemize}\footnotesize
-	\item Design experimental treatments that are non-obvious
-	\item Do not disclose the purpose of the study up front\footnote{But, consider the ethics of not doing so (more Friday)}
-	\end{itemize}
-\end{itemize}
-
-}
+\frame{}
 
 
 
@@ -1628,124 +1515,5 @@ Student presentations!
 \end{itemize}
 
 }
-
-
-\frame{}
-
-\appendix
-
-\section{Quiz}
-
-\frame{}
-
-\frame{
-
-\Large
-
-\begin{center}
-Quiz time!
-\end{center}
-
-}
-
-
-\frame{
-\frametitle{Compliance}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> What is compliance?
-\item<2-> How can we analyze experimental data when there is noncompliance?
-\end{enumerate}
-}
-
-\frame{
-\frametitle{Balance testing}
-
-\normalsize
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> What does randomization ensure about the composition of treatment groups?
-\item<2-> What can we do if we find a covariate imbalance between groups?
-\item<3-> How can we avoid this problem entirely?
-\end{enumerate}
-}
-
-
-\frame{
-\frametitle{Nonresponse and Attrition}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> Do we care about outcome nonresponse in experiments?
-\item<2-> How can we analyze experimental data when there is outcome nonresponse or post-treatment attrition?
-\end{enumerate}
-}
-
-
-\frame{
-\frametitle{Manipulation checks}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> What is a manipulation check? What can we do with it?
-\item<2-> What do we do if some respondents ``fail'' a manipulation check?
-\end{enumerate}
-}
-
-
-
-\frame{
-\frametitle{Null effects}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> What should we do if we find our estimated $\widehat{SATE} = 0$?
-\item<2-> What does it mean for an experiment to be \textit{underpowered}?
-\item<3-> What can we do to reduce the probability of obtaining an (unwanted) ``null effect''?
-\end{enumerate}
-}
-
-
-\frame{
-\frametitle{Effect heterogeneity}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> What should we do if, post-hoc, we find evidence of effect heterogeneity?
-\item<2-> What can we do pre-implementation to address possible heterogeneity?
-\end{enumerate}
-}
-
-
-\frame{
-\frametitle{Representativeness}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> Under what conditions is a design-based, probability sample necessary for experimental inference?
-\item<2-> What kind of causal inferences can we draw from an experiment on a descriptively unrepresentative sample?
-\end{enumerate}
-}
-
-\frame{
-\frametitle{Peer Review}
-
-\large
-
-\begin{enumerate}\itemsep0.5em
-\item<1-> What should we do if a peer reviewer asks us to ``control'' for covariates in the analysis?
-\item<2-> What should we do if a peer reviewer asks us to include or exclude particular respondents from the analysis?
-\end{enumerate}
-}
-
-
-
 
 \end{document}
