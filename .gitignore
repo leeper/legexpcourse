@@ -9,7 +9,7 @@ _site/
 *.out
 *.snm
 *.toc
-*.synctex.gz
+*.synctex*
 *.bbl
 *.blg
 *.Rhistory
