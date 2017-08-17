@@ -42,9 +42,9 @@ The first session will provide an overview of the course, discuss the history of
 
 ## Second Session (Morning)
 
-The second session will discuss field experiments and quasi-experiments on parliaments and legislatures.
+The second session will discuss the three dominant paradigms of experiments in legislative contexts: field experiments and quasi-experiments, survey experiments, and simulation studies, with reference to published and unpublished examples. [All reuqired and suggested readings are available here](https://drive.google.com/drive/folders/0Bwxjj0JIn0KoZnhZSlZhSG5ranc?usp=sharing).
 
-Experiments orchestrated by researchers:
+Field experiments orchestrated by researchers:
 
  - **Required**: Broockman (2013) - "Black Politicians Are More Intrinsically Motivated to Advance Blacks' Interests: A Field Experiment Manipulating Political Incentives"
  - **Suggested**: Butler, Broockman (2011) - "Do Politicians Racially Discriminate Against Constituents? A Field Experiment on State Legislators"
@@ -52,7 +52,7 @@ Experiments orchestrated by researchers:
  - **Suggested**: Esterling, Neblo, Lazer (2011) - "Means, Motive, And Opportunity In Becoming Informed About Politics"
  - **Suggested**: Butler, Nickerson (2011) - "Can Learning Constituency Opinion Affect How Legislators Vote? Results from a Field Experiment"
  
-Experiments *not* orchestrated by researchers:
+Field/quasi-experiments *not* orchestrated by researchers:
 
  - **Suggested**: Cirone, van Coppenolle (2017) - "Cabinets, Committees and Careers: A Natural Experiment in 19th Century France"
  - **Suggested**: Broockman, Butler (2015) - "Do Better Committee Assignments Meaningfully Benefit Legislators? Evidence from a Randomized Experiment in the Arkansas State Legislature"
@@ -62,9 +62,7 @@ Experiments *not* orchestrated by researchers:
  - **Suggested**: Bhavnani (2009) - "Do Electoral Quotas Work after They Are Withdrawn? Evidence from a Natural Experiment in India"
  - **Suggested**: Rogowski, Sinclair (2012) - "Estimating the Causal Effects of Social Interaction with Endogenous Networks"
  
-## Third Session (Afternoon)
-
-The third session will discuss survey (interview-based) experiments.
+Survey (interview-based) experiments:
 
  - **Required**: Renshon, Yarhi-Milo, and Kertzer (2016) - "Democratic Leaders, Crises and War: Paired Experiments on the Israeli Knesset and Public"
  - **Suggested**: Butler, Dynes (2016) - "How Politicians Discount the Opinions of Constituents with Whom They Disagree"
@@ -72,9 +70,7 @@ The third session will discuss survey (interview-based) experiments.
  - **Suggested**: Walgrave, Sevenans, Van Camp, Loewen (2017) - "What Draws Politicians' Attention? An Experimental Study of Issue Framing and its Effect on Individual Political Elites"
  - **Suggested**: Bayram (2017) - "Due Deference: Cosmopolitan Social Identity and the Psychology of Legal Obligation in International Politics"
 
-## Fourth Session (Afternoon)
-
-The fourth and final session will discuss parliamentary simulations and game theoretic experiments, with a focus on voting and coalition formation.
+Parliamentary simulations and game theoretic experiments:
 
  - **Required**: Frechette, Kagel, Lehrer (2003) - "Bargaining in Legislatures: An Experimental Investigation of Open versus Closed Amendment Rules"
  - **Suggested**: McKelvey, Ordeshook (JOP, 1984) - "An Experimental Study of the Effects of Procedural Rules on Committee Behavior"
@@ -82,6 +78,10 @@ The fourth and final session will discuss parliamentary simulations and game the
  - **Suggested**: Eckel, Holt (1989) - "Strategic Voting in Agenda-Controlled Committee Experiments"
  - **Suggested**: Bianco, Lynch, Miller, Sened (2008) - "The Constrained Instability of Majority Rule: Experiments on the Robustness of the Uncovered Set"
  - **Suggested**: Goeree, Yariv (2011) - "An Experimental Study of Collective Deliberation"
+
+## Afternoon Session
+
+In the afternoon session, students will present working papers and the day will conclude with a summative discussion of issues raised and paths forward.
 
 ---
 
