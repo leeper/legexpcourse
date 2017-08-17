@@ -99,7 +99,7 @@
 	\item An experiment!
 	\item Demonstrates ``anchoring'' heuristic
 	\end{itemize}
-\item<4-> Experiments are easy to analyze, but only if designed and implemented well
+\item<4-> Experiments are easy to analyze and generate causal inferences, but only if designed and implemented well
 \end{itemize}
 
 }
@@ -115,7 +115,7 @@
 
 \item Thomas Leeper
 
-\item Assistant Professor in Political Behaviour at London School of Economics
+\item Associate Professor in Political Behaviour at London School of Economics
 
 \begin{itemize}
 \item 2013--15: Aarhus University (Denmark)
@@ -138,28 +138,13 @@
 
 \begin{itemize}\itemsep1em
 
+\item What's your name?
+
 \item Where are you from?
 
-\item Have you designed a survey and/or experiment before?
-
-\item What do you hope to learn from the course?
+\item Have you designed and/or analyzed an experiment before?
 
 \end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Quick Survey}
-
-\begin{enumerate}\itemsep0.5em
-\item<2-> How many of you have worked with survey data before?
-\item<3-> Of those, how many of you have \textit{performed} a survey before?
-\item<4-> How many of you have worked with experimental data before?
-\item<5-> Of those, how many of you have \textit{performed} an experiment before?
-\end{enumerate}
 
 }
 
@@ -169,7 +154,7 @@
 \frametitle{Course Materials}
 
 \begin{center}
-All material for the course is available at:\\
+All material for this workshop, including required and suggested readings, are available at:\\
 
 \vspace{1em}
 
@@ -178,7 +163,7 @@ All material for the course is available at:\\
 
 }
 
-\frame{
+\frame[label=learningoutcomes]{
 
 \frametitle{Learning Outcomes}
 
@@ -195,19 +180,23 @@ By the end of the day, you should be able to\dots
 
 }
 
+\frame{\tableofcontents}
 
 
+\questions
 
-\section[History/Logic]{History and Logic of Experiments}
-\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+\section{Causal Inference}
+\frame{\tableofcontents[currentsection]}
+
 
 \frame{
 
 \frametitle{Experiments: Definition}
 
-Oxford English Dictionary defines ``experiment'' as:
+Oxford English Dictionary defines ``experiment'' as:\\
 
-\begin{enumerate}
+\begin{enumerate}\itemsep1em
 \item A scientific procedure undertaken to make a discovery, test a hypothesis, or demonstrate a known fact
 \item A course of action tentatively adopted without being sure of the outcome
 \end{enumerate}
@@ -215,19 +204,18 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frame{
 
-\frametitle{Experiments: History}
+\frametitle{Experiments have a long history}
 
 \begin{itemize}\itemsep0.75em
-\item ``Experiments'' have a very long history
-
-\item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century (Fisher, Neyman, Pearson, etc.)
+\item Origins in agricultural and biostatistical research in the 19th century (Fisher, Neyman, Pearson, etc.)
 
 \item First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
 
-	\begin{itemize}
-	\item<2-> First experiment by Gosnell (1924)
-	\item<2-> Gerber and Green (2000) first major \textit{field} experiment
-	\end{itemize}
+\item First polisci experiment by Gosnell (1924)
+
+\item Survey experiments have been common since 1930s
+
+\item Gerber and Green (2000) first \textit{major}, \textit{modern}, \textit{field} experiment
 
 \end{itemize}
 
@@ -236,56 +224,60 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frame{
 
-\frametitle{Survey-Experiments}
+\frametitle{Legislative Experiments}
 
 \small
 
-\begin{itemize}
-\item Rise of surveys in the behavioral revolution
+\begin{itemize}\itemsep0.5em
+\item Experiments in legislative contexts fit awkwardly in that history and the dominant paradigms have very different histories
+
+\item<2-> \textbf{Simulations}
+	
 	\begin{itemize}
-	\item Experimentation rare because of paper mode
-	\item Limited use of ``split ballots''
-	\end{itemize}
-\item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop \textbf{CATI}
-\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
-	\begin{itemize}\footnotesize
-	\item Then: the ``first multi-investigator''
-	\item Later: Skip Lupia and Diana Mutz created TESS
+	\item Originated in formal literatures on committee behavior, coalition formation, and majority rule institutions
 	\end{itemize}
 
+\item<3-> \textbf{Field experiments}
+
+	\begin{itemize}
+	\item Really only emerged in the past decade
+	\end{itemize}
+
+\item<4-> \textbf{Survey Experiments}
+
+	\begin{itemize}
+	\item Much more sparsely used for reasons that will become obvious
+	\end{itemize}
 \end{itemize}
 
 }
 
 
-
-
-
-
-\frame{
-	\includegraphics[width=\textwidth]{images/correlation.png}
-}
-
+\frame{}
 
 \frame{
 
-\frametitle{Addressing Confounding}
+\frametitle{{\normalsize What kinds of questions can we answer with experiments?}}
 
-In observational research\dots
+\normalsize
 
-\begin{enumerate}\itemsep0.5em
-\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
-\item<3-> Identify all possible confounds (\textbf{Z})
-\item<4-> ``Condition'' on all confounds
+\begin{itemize}\itemsep1em
+\item<2-> Forward causal questions
 	\begin{itemize}
-	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
+	\item Can X cause Y?
+	\item What effects does X have?
 	\end{itemize}
-\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \beta Z + \epsilon $
-\end{enumerate}
-
+\item<3-> Backward causal questions
+	\begin{itemize}
+	\item What causes Y?
+	\item How much of Y is attributable to X?
+	\end{itemize}
+\item<4-> Even though answering ``forward'' causal question, we start with an outcome concept
+\end{itemize}
 }
 
 
+% Causal graphs
 \begin{frame}
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
@@ -303,31 +295,131 @@ In observational research\dots
 \end{frame}
 
 
+\frame{
+
+\frametitle{Principles of causality}
+
+\begin{enumerate}\itemsep1em
+\item \textbf<2->{Correlation/Relationship}
+\item \textbf<2->{Nonconfounding}
+\item \textbf<2->{Direction (``temporal precedence'')}
+
+\vspace{1em}
+
+\item Mechanism
+
+\vspace{0.5em}
+
+\item Appropriate level of analysis
+\end{enumerate}
+}
 
 
 \frame{
 
-\frametitle{Experiments are different}
+\frametitle{Establishing Relationship}
 
-\begin{enumerate}\itemsep0.75em
-\item<2-> Draw causal inferences through \textit{design} not \textit{analysis}
-\item<3-> Randomization breaks selection bias
-\item<4-> We don't need to ``control'' for anything
-\item<5-> We see ``causal effects'' in the comparison of experimental groups
+\begin{itemize}\itemsep1em
+\item This is fairly trivial
+\item Simply find value of $Corr(X,Y)$
+\item In causal inference we often talk about correlations in terms of \textit{differences}
+	\begin{itemize}
+	\item Difference in values of $Y$ across values of $X$
+	\item The presence of a difference indicates a correlation
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Addressing Confounding}
+
+In observational studies, we address confounding by:
+
+\begin{enumerate}\itemsep1em
+\item<2-> Correlating a ``putative'' cause ($X$) and an outcome ($Y$)
+\item<3-> Identifying all possible confounds (\textbf{Z})
+\item<4-> ``Conditioning'' on all confounds
+	\begin{itemize}
+	\item Calculating correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
+	\end{itemize}
 \end{enumerate}
 
 }
 
-
-% Mill's method of difference
 \frame{
-\frametitle{{\normalsize Mill's Method of Difference}}
 
-\small
+\frametitle{Temporal Precedence}
 
-If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, \textbf<2->{have every circumstance save one in common}, that one occurring only in the former; \textbf<2->{the circumstance in which alone the two instances differ, is the} effect, or \textbf<2->{cause}, or an necessary part of the cause, \textbf<2->{of the phenomenon}.
+\begin{itemize}\itemsep0.5em
+\item Even if an observational design identifies a relationship and credibly addresses sources of confounding, it still may not be a credible causal inference
+
+\item<2-> ``Reverse causality'' is vague, referring to:
+	\begin{itemize}
+	\item Ambiguity about causal ordering, or
+	\item Sequentially reinforcing causality between $X$ and $Y$
+	\end{itemize}
+
+\item<3-> Causation is strictly forward moving in time
+
+\item<4-> $X$ must precede $Y$ in time for $X$ to cause $Y$
+
+	\begin{itemize}
+	\item $X$ can be \textit{measured} after $Y$ as long as it comes before it
+	\end{itemize}
+	
+\end{itemize}
+
 }
 
+
+\frame{
+\begin{center}
+\includegraphics[width=0.95\textwidth]{images/xkcdcorrelation}
+\end{center}
+}
+
+
+
+\frame{
+
+\frametitle{Experiments!}
+
+\begin{itemize}\itemsep0.75em
+\item<2-> A randomized experiment, or randomized control trial (RCT) is:
+\end{itemize}
+	\begin{quote}\small
+		The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
+	\end{quote}
+\begin{itemize}\itemsep0.75em
+\item<3-> If we manipulate the thing we want to know the effect of ($X$), and control (i.e., hold constant) everything we do not want to know the effect of ($Z$), the only thing that can affect the outcome ($Y$) is $X$.
+\end{itemize}
+
+}
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw<1>[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw<2>[->] (0,0) node[left, color=red] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Coin Toss} -- (X);
+    \draw<2->[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\questions
 
 
 \frame{
@@ -338,115 +430,91 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 \only<3>{\textbf{Treatment}: An intervention, whose effect(s) we wish to assess relative to some other (non-)intervention}
 
-\only<4>{
-\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
-\begin{itemize}
-\item Multiple potential outcomes for each unit, but we only observe one of them
-\end{itemize}
+\only<4>{\textbf{Outcome}: The variable we are trying to explain}
+
+\only<5>{
+\textbf{Potential outcomes}: The outcome value for each unit that we \textit{would observe} if that unit received each treatment\\
+
+\vspace{1em}
+
+Multiple potential outcomes for each unit, but we only observe one of them
+
 }
 
-\only<5>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
+\only<6>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention\\
 
+\vspace{1em}
+
+\textit{This is what we want to know!}
 }
-
-
-
-
-% Individual-level effects versus ATEs
-
-
-\frame{
-	\frametitle{The Experimental Ideal}
-	\small
-	A randomized experiment, or randomized control trial is:
- 		\begin{quote}\small
- 			The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
- 		\end{quote}
- 	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
-}
-
-\frame{
-\frametitle{The Experimental Ideal}
-\begin{itemize}\itemsep0.5em
-\item It solves both the temporal ordering and confounding problems of observational causal inference
-	\begin{itemize}
-   		\item Treatment ($X$) is applied by the researcher before outcome ($Y$)
-   		\item Randomization means there are no confounding ($Z$) variables
-	\end{itemize}
-\item<2-> Thus experiments are a ``gold standard'' of causal inference
-\item<3-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
-\end{itemize}
-}
-
-
-\frame{
-
-\frametitle{Neyman-Rubin Potential Outcomes Framework}
-
-If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
 
 }
 
 \frame{
-
-\frametitle{Neyman-Rubin Potential Outcomes Framework}
-
-Concisely, we typically discuss two potential outcomes:
-
-\begin{itemize}\small
-\item $Y_{0i}$, the \textit{potential} outcome \textit{realized} if $X_i = 0$ (b/c $D_i = 0$, assigned to control)
-\item $Y_{1i}$, the \textit{potential} outcome \textit{realized} if $X_i = 1$ (b/c $D_i = 1$, assigned to treatment)
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Historical Aside}
+	\frametitle{``The Perfect Doctor''}
 
 \small
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $Y_0$ & $Y_1$ \\ \hline 
+1 & ? & ? \\
+2 & ? & ? \\
+3 & ? & ? \\
+4 & ? & ? \\
+5 & ? & ? \\
+6 & ? & ? \\
+7 & ? & ? \\
+8 & ? & ? \\ \hline
+\textbf{Mean} & \textbf{?} & \textbf{?} \\
+\end{tabular}
+\end{center}
+}
 
-\begin{itemize}
-\item The history of the potential outcomes framework is contested
-\item Most people attribute it to Donald Rubin
-\item Paul Holland was the first to link to the philosophical discussions of causality
-\item Donald Rubin attributes this to Jerzy Neyman (1923)
-\item James Heckman denies all of this and attributes it Andrew Roy (1951)
-\end{itemize}
+\frame{
+	\frametitle{``The Perfect Doctor''}
+
+\small
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $Y_0$ & $Y_1$ \\ \hline 
+1 & ? & 14 \\
+2 & 6 & ? \\
+3 & 4 & ? \\
+4 & 5 & ? \\
+5 & 6 & ? \\
+6 & 6 & ? \\
+7 & ? & 10 \\
+8 & ? & 9 \\ \hline
+\textbf{Mean} & \textbf{5.4} & \textbf{11} \\
+\end{tabular}
+\end{center}
+}
+
+\frame{
+	\frametitle{``The Perfect Doctor''}
+
+\small
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $Y_0$ & $Y_1$ \\ \hline 
+1 & 13 & 14 \\
+2 & 6 & 0 \\
+3 & 4 & 1 \\
+4 & 5 & 2 \\
+5 & 6 & 3 \\
+6 & 6 & 1 \\
+7 & 8 & 10 \\
+8 & 8 & 9 \\ \hline
+\textbf{Mean} & \textbf{7} & \textbf{5} \\
+\end{tabular}
+\end{center}
 }
 
 
 
-
-
-
-
-% design-based experimental inference
 \frame{
 	\frametitle{Experimental Inference I}
-	\small
-	\begin{itemize}\itemsep0.5em
-    	\item<1-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them, randomly
-    	\item<2-> In this sense, we are sampling potential outcomes from each unit's population of potential outcomes
-		\only<2->{
-			\begin{center}
-			\begin{tabular}{ccccc}
-			unit & low & high & \onslide<3->{control} & \onslide<4->{etc.} \\ \midrule
-			1 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
-			2 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
-			3 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
-			4 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\ \bottomrule
-			\end{tabular}
-			\end{center}
-		}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Experimental Inference II}
-	\small
-	\begin{itemize}\itemsep0.5em
+	\begin{itemize}\itemsep1em
     	\item<1-> We cannot see individual-level causal effects
     	\item<2-> We can see \textit{average causal effects}
     		\begin{itemize}
@@ -457,11 +525,10 @@ Concisely, we typically discuss two potential outcomes:
 }
 
 \frame{
-	\frametitle{Experimental Inference III}
-	\small
-	\begin{itemize}\itemsep0.5em
-		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$ for every $i$ in the population
-		\item<2-> We can average: $E[TE_i] = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+	\frametitle{Experimental Inference II}
+	\begin{itemize}\itemsep1em
+		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+		\item<2-> We can average: $ATE = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
 		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
     		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
     	\item<4-> Is this what we want to know?
@@ -470,9 +537,9 @@ Concisely, we typically discuss two potential outcomes:
 
 
 \frame{
-	\frametitle{Experimental Inference IV}
+	\frametitle{Experimental Inference III}
 	\small
-	\begin{itemize}\itemsep0.5em
+	\begin{itemize}\itemsep1em
 	\item What we want and what we have:
 		\begin{align}
 		ATE & = E[Y_{1i}] - E[Y_{0i}] \\[1em]
@@ -488,7 +555,7 @@ Concisely, we typically discuss two potential outcomes:
 }
 
 \frame{
-	\frametitle{Experimental Inference V}
+	\frametitle{Experimental Inference IV}
 	\small
 	\begin{itemize}\itemsep0.5em
     	\item Only true when both of the following hold:
@@ -497,7 +564,7 @@ Concisely, we typically discuss two potential outcomes:
     	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
     	\end{align}
     	\item In that case, potential outcomes are \textit{independent} of treatment assignment
-		\item If true (e.g., due to randomization of $X$), then:
+		\item If true, then:
     	\begin{align*}
     	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
     	& = E[Y_{1i}] - E[Y_{0i}]\\
@@ -507,50 +574,42 @@ Concisely, we typically discuss two potential outcomes:
 }
 
 \frame{
-	\frametitle{Experimental Inference VI}
-	
-	
-	\normalsize
+	\frametitle{Experimental Inference V}
+	\small
 	\begin{itemize}\itemsep0.5em
-    	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
-   		\item<2-> Units differ only in side of coin that was up
-	   		\begin{itemize}\footnotesize
-	   		\item $X_i = 1$ only because $D_i = 1$
-	   		\end{itemize}
-	   	\item<3-> Implications:
-		   	\begin{itemize}
-		   	\item Covariate balance
-		   	\item Potential outcomes balanced and independent of treatment assignment
-		   	\item No confounding (selection bias)
-		   	\end{itemize}
+    	\item This holds in experiments because of randomization, which is a special, physical process of unpredictable sorting\footnote{Not ``random'' in the casual, everyday sense of the word}
+    		\begin{itemize}
+        		\item Units differ only in what side of coin was up
+        		\item Experiments randomly reveal potential outcomes
+        		\item Randomization balances $Z$ \textit{in expectation}
+    		\end{itemize}
+    	\item<2-> Matching/regression/etc. attempts to eliminate those confounds, such that:
+    	\begin{align*}
+    	E[Y_{1i} | Z] = E[Y_{1i} | X = 1, Z] = E[Y_{1i} | X = 0, Z]\\
+    	E[Y_{0i} | Z] = E[Y_{0i} | X = 1, Z] = E[Y_{0i} | X = 0, Z]
+    	\end{align*}
 	\end{itemize}
 }
 
 
-
-
-\begin{frame}
-\small 
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red, text width=2cm, align=center] (Tr) {Random\\Assignment} -- (X);
-    \draw<2->[->, very thick, color=red] (X) -- (Y);
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
+\frame{
+	\frametitle{Why an `Experimental Ideal'?}
+	\begin{itemize}\itemsep1em
+    	\item It solves both the temporal ordering and confounding problems\\
+    		\begin{itemize}
+        		\item Treatment ($X$) is applied by the researcher before outcome ($Y$)
+        		\item Randomization means there are no confounding ($Z$) variables
+    		\end{itemize}
+    	\item Thus experiments are sometimes called a ``gold standard'' or ``ideal'' design for causal inference
+	\end{itemize}
+}
 
 \questions
+
+
+
+\section{Experimental Analysis}
+\frame{\tableofcontents[currentsection]}
 
 
 
@@ -559,38 +618,81 @@ Concisely, we typically discuss two potential outcomes:
 \small
 \begin{itemize}
 \item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
-\item If our sample is \textit{representative}, then this provides an estimate of the population average treatment (PATE)
 \item This boils down to being a mean-difference between two groups:
 	\begin{equation}
 	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
 	\end{equation}
+\item In practice we often estimate this using:
+	\begin{itemize}
+	\item t-tests
+	\item OLS regression
+	\end{itemize}
 \end{itemize}
 }
-
-
 
 \frame{
 
-\frametitle{Computation of Effects I}
+\frametitle{Why use regression?}
 
-\begin{itemize}\itemsep0.5em
-\item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
-\item These are all basically equivalent
-\item<2-> Reasons to choose one procedure over another:
+\begin{enumerate}\itemsep1em
+\item Coefficient estimates are directly interpretable as estimated SATEs
+
+\item Basically no functional form or specification assumptions involved
+
+\item Flexibly accommodates experiments with $>2$ conditions
+
 	\begin{itemize}
-	\item<2-> Disciplinary norms
-	\item<3-> Ease of interpretation
-	\item<4-> Flexibility for >2 treatment conditions
+	\item \textit{n}-condition experiments
+	\item \textit{Factorial} designs
 	\end{itemize}
-\end{itemize}
 
-
+\end{enumerate}
 
 }
 
+\frame{
+
+\frametitle{Two ways to \textit{parameterize} factorial designs}
+
+Dummy variable regression (i.e., treatment--control CATEs):
+
+$Y = \beta_0 + \beta_1 X_{0,1} + \beta_2 X_{1,0} + \beta_3 X_{1,1} + \epsilon$
+
+\vspace{1em}
+
+Interaction effects (i.e., treatment--treatment CATEs):
+
+$Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
+
+\vspace{1em}
+
+Use \texttt{margins} to extract marginal effects
+
+}
+
+
+\begin{frame}[fragile]
+
+\frametitle{Computation of Effects in Stata/R}
+
+Stata:\small
+\begin{verbatim}
+ttest outcome, by(treatment)
+reg outcome i.treatment
+\end{verbatim}
+
+R:\small
+\begin{verbatim}
+t.test(outcome ~ treatment, data = data)
+lm(outcome ~ factor(treatment), data = data)
+\end{verbatim}
+
+\end{frame}
+
+
 \frame[label=tidy]{
 
-\frametitle{Computation of Effects II}
+\frametitle{Experimental Data Structures}
 
 An experimental data structure looks like:
 
@@ -614,7 +716,7 @@ An experimental data structure looks like:
 
 \frame{
 
-\frametitle{Computation of Effects II}
+\frametitle{Experimental Data Structures}
 
 Sometimes it looks like this instead, which is bad:
 
@@ -639,34 +741,7 @@ Sometimes it looks like this instead, which is bad:
 \againframe{tidy}
 
 
-
-\begin{frame}[fragile]
-
-\frametitle{Computation of Effects III}
-
-R:\small
-\begin{verbatim}
-t.test(outcome ~ treatment, data = data)
-lm(outcome ~ factor(treatment), data = data)
-\end{verbatim}
-
-Stata:\small
-\begin{verbatim}
-ttest outcome, by(treatment)
-reg outcome i.treatment
-\end{verbatim}
-
-\end{frame}
-
-
 \questions
-
-\Ractivity{Basic analysis}
-
-
-
-
-
 
 \frame{
 \frametitle{Experimental Analysis II}
@@ -683,13 +758,12 @@ reg outcome i.treatment
 \end{itemize}
 }
 
-
 \frame{
 \frametitle{Experimental Analysis III}
-	\small
 \begin{itemize}\itemsep0.5em
 \item Formula for the variance of the SATE is:\\
-$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}$
+
+$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{N_0} + \dfrac{\widehat{Var}(Y_1)}{N_1}$
 
 	\begin{itemize}
 	\item $\widehat{Var}(Y_0)$ is control group variance
@@ -697,10 +771,11 @@ $\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_
 	\end{itemize}
 
 \item We often express this as the \textit{standard error} of the estimate:\\
-$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var}(Y_1)}{n_1}}$
+
+$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var}(Y_1)}{N_1}}$
+
 \end{itemize}
 }
-
 
 \frame{
 
@@ -792,9 +867,6 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 }
 
-\Ractivity{Power Analysis}
-
-
 \frame{
 \frametitle{Intuition about Power}
 
@@ -804,53 +876,49 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 }
 
+\frame{
 
+\frametitle{Power in Legislative Experiments}
+
+\begin{itemize}\itemsep1em
+\item<2-> Legislatures are small!!!
+
+\item<3-> Because $N$ is fixed, limited capacity to increase $n$, so power has to be maximized by:
+
+	\begin{itemize}
+	\item Reducing item variance in outcome measures
+	\item Studying treatments with bigger effects
+	\item Expanding scope of studies
+	\item Creative research design
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+
+\questions
 
 
 \frame{}
 
-
-\section[Theory]{From Theory to Design}
+\section[Experimental Design]{From Theory to Experimental Design}
 \frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 % deriving hypotheses from theory and manipulations from hypotheses
 
 
 \frame{
 
-\frametitle{{\normalsize What kinds of questions can we answer with (survey) experiments?}}
+\frametitle{Experimental Hypothesis Testing}
 
-\normalsize
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Forward causal questions
-	\begin{itemize}
-	\item Can X cause Y?
-	\item What effects does X have?
-	\end{itemize}
-\item<3-> Backward causal questions
-	\begin{itemize}
-	\item What causes Y?
-	\item How much of Y is attributable to X?
-	\end{itemize}
-\item<4-> Even though answering ``forward'' causal question, we start with an outcome concept
-\end{itemize}
-}
-
-
-
-\section[Principles]{Operationalization Principles}
-
-\frame{
-
-\frametitle{Hypothesis Testing}
-
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item From theory, we derive testable hypotheses
-\begin{itemize}
-\item Hypotheses are expectations about differences in outcomes across levels of a putatively causal variable
-\item Hypothesis must be testable by an SATE
-\end{itemize}
-\item Manipulations are developed to create variation in that causal variable
+	\begin{itemize}
+	\item Hypotheses are expectations about differences in outcomes across levels of a putatively causal variable
+	\item In an experiment, an hypothesis must be testable by an SATE
+	\end{itemize}
+
+\item The experimental manipulations induce variation in the causal variable that enable tests of the hypotheses
 \end{itemize}
 
 }
@@ -997,6 +1065,338 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 
 \frame{}
+
+
+
+
+\section{Paradigms and Examples}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+\frame{
+
+\frametitle{Three Major Paradigms}
+
+\begin{enumerate}\itemsep1em
+\item Field Experiments
+
+	\begin{itemize}\small
+	\item Ex. Broockman (2013) -- ``Black Politicians Are More Intrinsically Motivated to Advance Blacks' Interests''
+	\end{itemize}
+
+\item Survey Experiments
+
+	\begin{itemize}\small
+	\item Ex. Renshon, Yarhi-Milo, and Kertzer (2016) -- ``Democratic Leaders, Crises and War: Paired Experiments on the Israeli Knesset and Public''
+	\end{itemize}
+
+\item Simulations
+
+	\begin{itemize}\small
+	\item Ex. Frechette, Kagel, Lehrer (2003) -- ``Bargaining in Legislatures: An Experimental Investigation of Open versus Closed Amendment Rules''
+	\end{itemize}
+
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{Paradigm 1: Field Experiments}
+
+\begin{itemize}\itemsep1em
+\item Basic idea: randomly expose legislators \textit{in situ} to some experience and measure an outcome that might be affected by it
+
+\item Two ``flavours''
+
+	\begin{enumerate}
+	\item Orchestrated by the researcher(s)
+	\item ``Natural'' experiments not orchestrated by the researcher(s)
+	\end{enumerate}
+
+\item Tend to be simple in terms of design due to practical difficulty of exposing legislators' to treatment and measuring outcomes
+
+\item ``Natural'' experiments are limited to the fact that relatively few features of legislatures are randomized (e.g., committee assignments, office locations, proposal rights/order, etc.)
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Paradigm 1: Field Experiments}
+
+\begin{itemize}\itemsep1em
+
+\item Example of Flavour A
+
+	\begin{itemize}
+	\item Broockman (2013)
+	\item Treatment: Form of contact from a prospective constituent
+	\item Outcome: Whether a response is received
+	\item Effect: Difference in response rates by treatment
+	\end{itemize}
+
+\item Example of Flavour B
+
+	\begin{itemize}
+	\item Kellermann, Shepsle (2009)
+	\item Treatment: Freshmen legislators are randomly ordered in determining committee assignments
+	\item Outcome: Various metrics of leadership and legislative activity
+	\item Effect: Difference in those outcomes between higher- and lower-ranked legislators
+	\end{itemize}
+
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{Paradigm 2: Survey experiments}
+
+\begin{itemize}\itemsep1em
+\item Basic idea: conduct interviews with legislators (in-person or through another mode), where features of questionnaire are randomized
+
+\item Recruiting legislators into interviews tends to be extremely difficult, thus:
+
+	\begin{itemize}
+	\item Almost unavoidably underpowered 
+	
+	\item Can only study legislators who agree to participate
+
+	\item Necessarily simplistic designs with treatment and outcome measured in a single interview\footnote{Can be generalized to allow field treatments with survey measures, or survey treatments with field measures}
+	
+	\item Survey experiments on legislators tend to be rare
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Paradigm 2: Survey Experiments}
+
+Example:
+
+\begin{itemize}\itemsep1em
+
+\item Butler and Dynes (2016)
+
+\item Treatment: State legislators completing a survey read a hypothetical constituent letter with varying stated opinions
+
+\item Outcome: Measures of perceptions of constituent characteristics (e.g., knowledge)
+
+\item Effect: Difference in perceptions b/w constituents with similar/dissimilar views to legislator
+
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Paradigm 3: Simulations}
+
+\begin{itemize}\itemsep1em
+\item Basic idea: Derive theoretical expectations about legislative behavior and test those predictions in a \textit{stylized} legislative context using non-legislators as participants
+
+\item These are historically much more common than paradigms 1 or 2
+
+\item Unique considerations:
+
+	\begin{itemize}
+	\item Tend to be based in formal theories of legislatures
+	\item Sample sizes limited by resources
+	\item Historically in labs, but increasingly common online
+	\item Tend to lack face validity given context and participants
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Paradigm 3: Simulations}
+
+Example:
+
+\begin{itemize}\itemsep1em
+
+\item Wilson (1986)
+
+\item Treatment: ``Legislators'' vote under open or closed amendment rules
+
+\item Outcome: The final ``policy'' adopted by the ``legislature''
+
+\item Effect: Difference in ``policy'' adopted by the legislature
+
+\end{itemize}
+}
+
+
+\frame{}
+
+\questions
+
+\frame{
+
+\frametitle{15-minute Activity!}
+
+\begin{enumerate}
+
+\item Divide into three groups
+
+\item<2-> Groups discuss one of the texts:
+
+	\begin{itemize}
+	\item Group 1: Broockman (2013)
+	\item Group 2: Renshon, Yarhi-Milo, and Kertzer (2016)
+	\item Group 3: Frechette, Kagel, Lehrer (2003)
+	\end{itemize}
+
+\item<3-> Discuss:
+
+	\begin{itemize}
+	\item What is the experiment? How does it work?
+	\item What do the authors find? What is the effect?
+	\item What are the practical challenges/issues raised?
+	\end{itemize}
+\end{enumerate}
+
+}
+
+\frame{}
+
+
+
+\section[Challenges]{Challenges of Legislative Experiments}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Many Challenges, Too Little Time}
+
+\begin{enumerate}\itemsep1em
+\item Nonresponse and Noncompliance
+
+\item Spillover
+
+\item What can be randomized?
+
+\item Ethics
+\end{enumerate}
+
+}
+
+
+% Nonresponse and Noncompliance
+\frame{
+
+\frametitle{{\normalsize Treatment Noncompliance}}
+
+\begin{itemize}\itemsep0.5em
+\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
+\item<2-> Several strategies
+	\begin{itemize}
+	\item ``As treated'' analysis
+	\item ``Intention to treat'' analysis
+	\item Estimate a LATE
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{{\normalsize Analyzing Noncompliance}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
+\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
+\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
+\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Local Average Treatment Effect}}
+	\small
+	\begin{itemize}\itemsep0.2em
+	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
+	\item This matters if effects are \textit{heterogeneous}
+	\item LATE is effect for those who \textit{comply}
+	\item Four subpopulations:
+		\begin{itemize}\footnotesize
+		\item Compliers: $X = 1$ only if $D = 1$
+		\item Always-takers: $X = 1$ regardless of $D$
+		\item Never-takers: $X = 0$ regardless of $D$
+		\item Defiers: $X = 1$ only if $D = 0$
+		\end{itemize}
+	\item Exclusion restriction! Monotonicity!
+	\end{itemize}
+}
+
+\questions
+
+
+
+
+\frame{
+\frametitle{Compliance}
+\begin{itemize}
+\item Compliance is when individuals receive and accept the treatment to which they are assigned:
+	\begin{itemize}
+	\item Receive the wrong treatment (cross-over)
+	\item Fail to receive any treatment 
+	\end{itemize}
+\item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
+\end{itemize}
+}
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw<1>[->] (0,0) node[left] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
+    \draw<2->[->] (0,0) node[left, color=red] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (3.5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Coin Toss} -- (X);
+    \draw[->, very thick, color=red] (X) -- (Y);
+    \draw<2->[->, very thick, color=blue] (-3,-1) node[left, color=blue] (X2) {$\text{Smoking}_{t-1}$} -- (Y);
+    \draw<2->[->, very thick, color=blue] (X2) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+% Spillover
+
+
+% What can be randomized?
+\frame{
+
+\frametitle{What can be randomized?}
+
+
+}
+
+
+% Ethics
+
+
+
+
+
+
+
+
 
 
 
@@ -1192,261 +1592,49 @@ The best criterion for evaluating the quality of an experiment is whether it man
 
 
 
-\subsection[Examples]{Common Paradigms and Examples}
+
+\section{Student Presentations}
 \frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
+\frame{
+
+\begin{center}
+\Large
+
+Student presentations!
+\end{center}
+
+}
+
+
+
+\frame{}
+
+\section{Conclusion}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+\againframe<5>{learningoutcomes}
 
 \frame{
 
-\frametitle{Conclusion}
+\frametitle{In Conclusion}
 
-\begin{itemize}\itemsep0.5em
-\item Do we want to know SATE, CATE(s), or both?
-\item<2-> Decide in advance
-	\begin{itemize}
-	\item Include in protocol
-	\item Design study to estimate CATE(s)
-	\end{itemize}
-\item<3-> Estimation of unit-related CATEs
-	\begin{itemize}
-	\item Block randomization
-	\item Post-hoc procedures
-	\end{itemize}
+\begin{itemize}\itemsep1em
+\item Experiments are mostly about design, not analysis
+
+\item Experiments are underutilized in legislative contexts, in part because conducting them effectively is extremely difficult
+
+\item This means that careful but often simple design can generate potentially powerful and novel insights into legislative behavior
 \end{itemize}
 
 }
 
 
-\questions
+\frame{}
 
+\appendix
 
-\section[More Designs]{Beyond One-Shot Designs}
-\frame{\tableofcontents[currentsubsection,subsubsectionstyle=hide]}
-
-\frame{
-
-\frametitle{{\normalsize Beyond One-shot Designs}}
-
-
-\begin{itemize}\itemsep0.5em
-\item Surveys can be used as a measurement instrument for a field treatment or a manipulation applied in a different survey panel wave
-	\begin{enumerate}
-	\item Measure effect duration in two-wave panel
-	\item Solicit pre-treatment outcome measures in a two-wave panel
-	\item Measure effects of field treatment in post-test only design
-	\item Randomly encourage field treatment in pre-test and measure effects in post-test
-	\end{enumerate}
-\item<2-> Problems? Compliance \& nonresponse
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize I. Effect Duration}}
-
-\begin{itemize}\itemsep0.5em
-\item Use a two- (or more-) wave panel to measure duration of effects
-	\begin{itemize}
-	\item T1: Treatment and outcome measurement
-	\item T2+: Outcome measurement
-	\end{itemize}
-\item Two main concerns
-	\begin{itemize}
-	\item Attrition
-	\item Panel conditioning
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize II. Within-Subjects Designs}}
-
-\small
-
-\begin{itemize}
-\item Estimate treatment effects as a difference-in-differences
-\item Instead of using the post-treatment mean-difference in $Y$ to estimate the causal effect, use the difference in pre-post differences for the two groups:
-	\begin{align*}
-	(\hat{Y}_{0,t+1} - \hat{Y}_{0,t}) - (\hat{Y}_{j,t+1} - \hat{Y}_{j,t})
-	\end{align*}
-\item<2-> Advantageous because variance for paired samples decreases as correlation between $t_0$ and $t_1$ observations increases
-\end{itemize}
-
-}
-
-
-\frame{
-	\begin{center}
-	\begin{tikzpicture}[>=latex', scale=0.8]
-        \draw[->] (0,0) node (origin) {}  -- (8,0) node[right] (xaxis) {time};
-        \draw[->] (origin) -- (0,8) node[left] (yaxis) {y};
-        % x ticks
-        \foreach \x in {2,4,6}
-        	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
-        \draw (2,0) node[below] (before) {$t$};
-        \draw (6,0) node[below] (after) {$t+1$};
-        \draw (4,-0.25) node[below, scale=0.5] (IV) {Intervention};
-        % y ticks
-        \foreach \y in {0,...,7}
-             \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\y$};
-        % intervention
-        \draw (4,0) -- (4,8);
-
-        % line
-        \draw<2-> (6,3.5) node (tr) {};
-        \draw<3-> (6,5) node (ctrl) {};
-        \draw<2-3>[blue] (8,3.5) node (trlab) {Treated};
-        \draw<3-3>[red] (8,5) node (ctrllab) {Control};        
-        \draw<2->[blue, line width=2pt] (2,3) -- (tr);
-        \draw<3->[red, line width=2pt] (2,7) -- (ctrl);
-        
-        % diffs
-        \draw<4-6>[right,decorate,decoration={brace,mirror}] 
-        	(6,3) -- (6,3.5) node[right, pos=0.5] (idiff) {\small $Y_{i,t+1} - Y_{i,t} = +0.5$};
-        \draw<4-6>[right,decorate,decoration={brace}] 
-            (6,7) -- (6,5) node[right, pos=0.5] (jdiff) {\small $Y_{j,t+1} - Y_{j,t} = -2.0$};
-        
-        % trends
-        \draw<5-6>[red,->] (1,7) -- (1,4);
-        \draw<5->[red, dashed] (0,8) -- (8,4);
-        \draw<5->[red, dashed] (0,4) -- (8,0);
-        \draw<6>[right,decorate,decoration={brace}] 
-            (6,3) -- (6,1) node[right, pos=0.5] (idiff2) {\small $2.0$};
-        \draw<7>[right,decorate,decoration={brace}] 
-            (6,3.5) -- (6,1) node[right, pos=0.5] (idiff2) {\small $DID = +2.5$};
-                        
-        
-    \end{tikzpicture}
-    \end{center}
-}
-
-
-\frame{
-
-	\frametitle{{\normalsize Threats to Validity}}
-	
-	\small
-	
-	As soon as time comes into play, we have to worry about threats to validity.\footnote{Shadish, Cook, and Campbell (2002)}
-	
-	\begin{enumerate}
-	\item<2-> History (simultaneous cause)
-	\item<3-> Maturation (time trends)
-	\item<4-> Testing (observation changes respondents)
-	\item<5-> Instrumentation (changing operationalization)
-	\item<6-> Instability (measurement error)
-	\item<7-> Attrition
-	\end{enumerate}
-}
-
-
-
-
-
-
-\frame{
-
-\frametitle{{\normalsize III. Randomized Field Treatment}}
-
-\small
-
-\begin{itemize}\itemsep-0.2em
-\item Examples:
-	\begin{enumerate}
-	\item<2-> Citizens randomly sent a letter by post encouraging them to reduce water usage
-	\item<3-> Different local media markets randomly assigned to receive different advertising
-	\end{enumerate}
-\item<4-> Survey is used to measure outcomes, when treatment assignment is already known
-\item<5-> Issues
-	\begin{itemize}
-	\item<6-> Nonresponse
-	\item<6-> Noncompliance
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize IV. Treatment Encouragement}}
-
-\small
-
-\begin{itemize}\itemsep-0.2em
-\item Design:
-	\begin{itemize}
-	\item T1: Encourage treatment
-	\item T2: Measure effects
-	\end{itemize}
-\item Examples:
-	\begin{enumerate}
-	\item Albertson and Lawrence\footnote{Albertson \& Lawrence. 2009. ``After the Credits Roll.'' \textit{American Politics Research} 37(2): 275--300. \href{http://doi.org/10.1177/1532673X08328600}{10.1177/1532673X08328600}.}
-	\end{enumerate}
-\item<2-> Issues
-	\begin{itemize}
-	\item<3-> Nonresponse
-	\item<3-> Noncompliance
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Treatment Noncompliance}}
-
-\begin{itemize}\itemsep0.5em
-\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
-\item<2-> Several strategies
-	\begin{itemize}
-	\item ``As treated'' analysis
-	\item ``Intention to treat'' analysis
-	\item Estimate a LATE
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-\frametitle{{\normalsize Analyzing Noncompliance}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
-\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
-\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
-\end{itemize}
-}
-
-\frame{
-	\frametitle{{\large Local Average Treatment Effect}}
-	\small
-	\begin{itemize}\itemsep0.2em
-	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
-	\item This matters if effects are \textit{heterogeneous}
-	\item LATE is effect for those who \textit{comply}
-	\item Four subpopulations:
-		\begin{itemize}\footnotesize
-		\item Compliers: $X = 1$ only if $D = 1$
-		\item Always-takers: $X = 1$ regardless of $D$
-		\item Never-takers: $X = 0$ regardless of $D$
-		\item Defiers: $X = 1$ only if $D = 0$
-		\end{itemize}
-	\item Exclusion restriction! Monotonicity!
-	\end{itemize}
-}
-
-\questions
-
-
-
-
-
+\section{Quiz}
 
 \frame{}
 
@@ -1556,16 +1744,6 @@ Quiz time!
 \item<2-> What should we do if a peer reviewer asks us to include or exclude particular respondents from the analysis?
 \end{enumerate}
 }
-
-
-\questions
-
-
-
-
-
-\section{Conclusion}
-\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 
 
